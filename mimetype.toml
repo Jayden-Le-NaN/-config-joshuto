@@ -1,48 +1,25 @@
 [class]
 audio_default = [
-  { command = "mpv", args = [
-    "--",
-  ] },
-  { command = "mediainfo", pager = true },
+  { command = "vlc"},
 ]
 
 image_default = [
-  { command = "qimgv", args = [
-    "--",
-  ], fork = true, silent = true },
-  { command = "krita", args = [
-    "--",
-  ], fork = true, silent = true },
-  { command = "exiftool", pager = true },
-  { command = "swappy", args = [
-    "-f",
-  ], fork = true },
+  {command = "gthumb"},
 ]
 
 video_default = [
-  { command = "mpv", args = [
-    "--",
-  ], fork = true, silent = true },
-  { command = "mediainfo", pager = true },
-  { command = "mpv", args = [
-    "--mute",
-    "on",
-    "--",
-  ], fork = true, silent = true },
+  { command = "vlc"}
 ]
 
 text_default = [
   { command = "nvim" },
-  # { command = "micro" },
-  # { command = "gedit", fork = true, silent = true },
-  # { command = "bat", args = [
-  #   "--paging=always",
-  # ] },
 ]
 
 reader_default = [{ command = "evince", fork = true, silent = true }]
 
 libreoffice_default = [{ command = "libreoffice", fork = true, silent = true }]
+
+wps_defalut = [{ command = "wps" }]
 
 [extension]
 
@@ -141,6 +118,7 @@ vim.inherit = "text_default"
 xml.inherit = "text_default"
 yaml.inherit = "text_default"
 yml.inherit = "text_default"
+m.inherit = "text_default"
 
 # archive formats
 7z.app_list = [
@@ -211,14 +189,14 @@ odf.inherit = "libreoffice_default"
 ods.inherit = "libreoffice_default"
 odp.inherit = "libreoffice_default"
 
-doc.inherit = "libreoffice_default"
-docx.inherit = "libreoffice_default"
-xls.inherit = "libreoffice_default"
-xlsx.inherit = "libreoffice_default"
-ppt.inherit = "libreoffice_default"
-pptx.inherit = "libreoffice_default"
+doc.inherit = "wps_defalut"
+docx.inherit = "wps_defalut"
+xls.inherit = "wps_defalut"
+xlsx.inherit = "wps_defalut"
+ppt.inherit = "wps_defalut"
+pptx.inherit = "wps_defalut"
 
-pdf.inherit = "reader_default"
+pdf.inherit = "wps_defalut"
 
 kra.app_list = [{ command = "krita", fork = true, silent = true }]
 kdenlive.app_list = [{ command = "kdenlive", fork = true, silent = true }]
