@@ -131,6 +131,11 @@ keymap = [
   { keys = ["g", "e"], commands = ["cd /etc"] },
   { keys = ["g", "h"], commands = ["cd ~/"] },
   { keys = ["?"], commands = ["help"] },
+
+  # user defined key
+  { keys = ["J"], commands = ["cursor_move_down 5"] },
+  { keys = ["K"], commands = ["cursor_move_up 5"] },
+  { keys = ["B"], commands = ["shell bash"] },
 ]
 
 [task_view]
