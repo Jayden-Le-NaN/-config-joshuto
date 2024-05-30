@@ -195,11 +195,16 @@ handle_mime() {
             exiftool "${FILE_PATH}" && exit 0
             exit 1 ;;
 
-            ## Image
         image/*)
             ## Preview as text conversion
-            (nul=$(exiftool "${FILE_PATH}")) && exit 0
+            exiftool "${FILE_PATH}" && exit 0
             exit 1 ;;
+
+            ## Image
+        # image/*)
+        #     ## Preview as text conversion
+        #     (nul=$(exiftool "${FILE_PATH}")) && exit 0
+        #     exit 1 ;;
 
             ## Video and audio
         video/* | audio/*)
